@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox alignment="CENTER" prefHeight="900.0" prefWidth="700.0" spacing="20.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.book.book.view.BookController">
+  <padding>
+    <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+  </padding>
+   <BorderPane fx:id="root" prefHeight="900.0" prefWidth="700.0">
+       <top>
+           <MenuBar>
+               <Menu text="文件">
+                   <MenuItem fx:id="openMenu" onAction="#openMenuAction" text="打开..." />
+               </Menu>
+           </MenuBar>
+       </top>
+      <left>
+         <ListView fx:id="bookListView" prefHeight="800.0" prefWidth="150.0" />
+      </left>
+      <center>
+         <BorderPane prefHeight="700.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+             <top>
+                 <FlowPane prefHeight="30.0" prefWidth="600.0">
+                     <Label prefWidth="50.0">字号:   </Label>
+                     <ChoiceBox fx:id="fontSizeChoiceBox" prefWidth="50.0" />
+                     <Label prefWidth="50.0">行间距:   </Label>
+                     <ChoiceBox fx:id="lineHeightBox" prefWidth="50.0" />
+                     <Label prefWidth="50.0">背景色:   </Label>
+                     <ColorPicker fx:id="colorPicker" prefWidth="50.0" />
+                    <Button fx:id="markButton" mnemonicParsing="false" text="保存书签" />
+                     <CheckBox fx:id="checkBox" mnemonicParsing="false" text="自动翻页" />
+                     <Button fx:id="delMark" mnemonicParsing="false" text="删除书签" />
+                 </FlowPane>
+             </top>
+            <center>
+               <TextArea fx:id="textAera" prefHeight="600.0" prefWidth="600.0" wrapText="true" BorderPane.alignment="CENTER" />
+            </center>
+             <bottom>
+                 <HBox prefHeight="30.0" prefWidth="600.0">
+                    <Pagination fx:id="pagination" prefHeight="30.0" prefWidth="200.0" />
+                 </HBox>
+             </bottom>
+             <right>
+                 <ListView fx:id="markListView" prefHeight="800.0" prefWidth="150.0" />
+             </right>
+         </BorderPane>
+      </center>
+   </BorderPane>
+</VBox>
