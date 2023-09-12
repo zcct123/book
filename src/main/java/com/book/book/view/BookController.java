@@ -309,6 +309,9 @@ public class BookController implements Initializable {
 
         showBook();
         this.currBook = book;
+        Integer page = book.getPage();
+        this.pagination.setPageCount(this.currBook.getPageTotal());
+        this.currBook.setPage(page);
         this.currBook.setPage(this.currBook.getPage());
     //    this.pagination.setPageCount(this.currBook.getPageTotal());
         this.pagination.setCurrentPageIndex(this.currBook.getPage()-1);
